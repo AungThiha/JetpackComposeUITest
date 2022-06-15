@@ -7,11 +7,11 @@ class MainViewModel : ViewModel() {
 
     var isFirstButtonShown = mutableStateOf(true)
 
-    fun openCardDetails() {
+    fun onFirstButtonClicked() {
         isFirstButtonShown.value = false
     }
 
-    fun openHome() {
+    fun onSecondButtonClicked() {
         isFirstButtonShown.value = true
     }
 }
