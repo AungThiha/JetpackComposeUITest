@@ -22,7 +22,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyApplicationTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
@@ -34,21 +33,4 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Screen(mainViewModel: MainViewModel) {
-    Column(
-        modifier = Modifier.padding(top = 100.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        if (mainViewModel.isFirstButtonShown.value) {
-            Button(onClick = { mainViewModel.openCardDetails() }) {
-                Text(text = "First Button", style = MaterialTheme.typography.button.copy(color = MaterialTheme.colors.onPrimary))
-            }
-        } else {
-            Button(onClick = { mainViewModel.openHome() }) {
-                Text(text = "Second Button", style = MaterialTheme.typography.button.copy(color = MaterialTheme.colors.onPrimary))
-            }
-        }
-    }
 
-}
