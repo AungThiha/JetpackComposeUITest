@@ -17,16 +17,14 @@ const val BUTTON_SECOND = "BUTTON_SECOND"
 @Composable
 fun Screen(mainViewModel: MainViewModel) {
     Column(
-        modifier = Modifier.padding(top = 100.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(top = 100.dp, start = 100.dp),
     ) {
         if (mainViewModel.isFirstButtonShown.value) {
             Button(
                 modifier = Modifier.testTag(BUTTON_FIRST),
                 onClick = { mainViewModel.onFirstButtonClicked() }) {
                 Text(
-                    text = "First Button",
-                    style = MaterialTheme.typography.button.copy(color = MaterialTheme.colors.onPrimary)
+                    text = "First Button"
                 )
             }
         } else {
@@ -34,8 +32,7 @@ fun Screen(mainViewModel: MainViewModel) {
                 modifier = Modifier.testTag(BUTTON_FIRST),
                 onClick = { mainViewModel.onSecondButtonClicked() }) {
                 Text(
-                    text = "Second Button",
-                    style = MaterialTheme.typography.button.copy(color = MaterialTheme.colors.onPrimary)
+                    text = "Second Button"
                 )
             }
         }

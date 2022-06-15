@@ -9,7 +9,6 @@ import androidx.compose.ui.test.hasTestTag
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.performClick
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.jetpack.myapplication.ui.theme.MyApplicationTheme
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -23,14 +22,7 @@ class ComposeTest {
     @Test
     fun composeTest() {
         composeTestRule.setContent {
-            MyApplicationTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    Screen(mainViewModel = MainViewModel())
-                }
-            }
+            Screen(mainViewModel = MainViewModel())
         }
 
         composeTestRule.onNode(hasTestTag(BUTTON_FIRST)).performClick()
