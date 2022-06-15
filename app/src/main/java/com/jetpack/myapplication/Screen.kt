@@ -27,7 +27,7 @@ fun Screen(mainViewModel: MainViewModel) {
             }
         } else {
             Button(
-                modifier = Modifier.testTag(BUTTON_FIRST),
+                modifier = Modifier.testTag(BUTTON_SECOND),
                 onClick = { mainViewModel.onSecondButtonClicked() }) {
                 Text(
                     text = "Second Button"
